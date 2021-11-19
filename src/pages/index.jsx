@@ -51,6 +51,7 @@ export default function IndexPage({ data }) {
   return (
     <Layout>
       <Hero />
+      <h1>Monster Fireworks - workflow test</h1>
       <ProductListing products={data?.shopifyCollection?.products} />
     </Layout>
   )
