@@ -2,10 +2,12 @@
   display: grid;
   grid-template-columns: 1fr;
   column-gap: var(--space-3xl);
+  
 }
 
 .container {
   padding: var(--size-gutter-raw);
+  
 }
 
 .header {
@@ -163,6 +165,8 @@
   grid-template-columns: max-content 1fr;
   align-items: baseline;
 }
+
+
 
 @media (min-width: 640px) {
   .productBox {

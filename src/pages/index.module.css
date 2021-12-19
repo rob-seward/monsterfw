@@ -3,7 +3,8 @@
   padding-right: var(--size-gutter-raw);
   padding-top: var(--space-lg);
   padding-bottom: var(--space-3xl);
-  max-width: 76ch;
+  
+  background: #1d1d1f;
 }
 
 .intro {
@@ -25,6 +26,7 @@
 
 .callOut > strong {
   text-decoration: underline;
+  text-align: center;
 }
 
 .callToAction {
@@ -33,8 +35,13 @@
   line-height: var(--dense);
   letter-spacing: var(--tight);
   color: var(--text-color-secondary);
+  
 }
 
 .deployButton {
   margin-top: var(--space-lg);
+}
+
+ul, li {
+  color:white;
 }

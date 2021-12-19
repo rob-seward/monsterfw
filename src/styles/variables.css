@@ -92,6 +92,9 @@
   --product-grid: 1fr;
 }
 
+
+
+
 /* role-based token adjustments per breakpoint */
 @media (min-width: 640px) {
   :root {

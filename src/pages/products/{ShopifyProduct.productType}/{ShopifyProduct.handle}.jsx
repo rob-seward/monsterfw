@@ -194,6 +194,7 @@ export default function Product({ data: { product, suggestions } }) {
                 quantity={quantity}
                 available={available}
               />
+              
             </div>
             <div className={metaSection}>
               <span className={labelFont}>Type</span>

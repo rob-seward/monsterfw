@@ -3,6 +3,12 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getShopifyImage } from "gatsby-source-shopify"
 import { formatPrice } from "../utils/format-price"
+import { StoreContext } from "../context/store-context"
+import {AddToCart} from "../components/add-to-cart"
+import Video from "../components/video"
+import JSONData from "../content/fireworksVideos.json"
+import { moreButton } from "./more-button.module.css"
+
 import {
   productCardStyle,
   productHeadingStyle,
@@ -10,17 +16,39 @@ import {
   productDetailsStyle,
   productVendorStyle,
   productPrice,
+  productIntroStyle,
 } from "./product-card.module.css"
 
+
+
+
+
 export function ProductCard({ product, eager }) {
+
+  const { client } = React.useContext(StoreContext);
+
+  
+  
   const {
+    id,
     title,
+    description,
+    tags,
     priceRangeV2,
     slug,
     images: [firstImage],
     vendor,
     storefrontImages,
   } = product
+
+
+
+
+const correctVideo = JSONData.content.find(data => data.id === product.id);
+console.log(correctVideo);
+
+
+
 
   const price = formatPrice(
     priceRangeV2.minVariantPrice.currencyCode,
@@ -45,13 +73,29 @@ export function ProductCard({ product, eager }) {
   }
 
   const hasImage = firstImage || Object.getOwnPropertyNames(storefrontImageData || {}).length
-
+  
+  
   return (
     <Link
       className={productCardStyle}
       to={slug}
       aria-label={`View ${title} product page`}
     >
+      <div className={productDetailsStyle}>
+        
+        <h2 as="h2" className={productHeadingStyle}>
+          {title}
+        </h2>
+        <div className={productVendorStyle}>{vendor}</div>
+        
+        
+        <div className={productPrice}>{price}</div>
+        
+        
+          <div>
+            </div>
+      </div>
+      
       {hasImage
         ? (
           <div className={productImageStyle} data-name="product-image-box">
@@ -66,11 +110,19 @@ export function ProductCard({ product, eager }) {
         )
       }
       <div className={productDetailsStyle}>
-        <div className={productVendorStyle}>{vendor}</div>
-        <h2 as="h2" className={productHeadingStyle}>
-          {title}
-        </h2>
-        <div className={productPrice}>{price}</div>
+      <div className={productVendorStyle}>{correctVideo?.intro}</div>
+        
+        
+        <Video videoSrcURL={correctVideo?.videoSrcURL}/>
+        
+        <Link  className={moreButton} to="/products/jumping-jelly-beans/">more...</Link>
+
+        
+      
+        
+        
+          <div>
+            </div>
       </div>
     </Link>
   )
@@ -80,6 +132,7 @@ export const query = graphql`
   fragment ProductCard on ShopifyProduct {
     id
     title
+    description
     slug: gatsbyPath(
       filePath: "/products/{ShopifyProduct.productType}/{ShopifyProduct.handle}"
     )
@@ -94,6 +147,7 @@ export const query = graphql`
         currencyCode
       }
     }
+    tags
     vendor
   }
 `

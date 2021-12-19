@@ -2,7 +2,9 @@
   max-width: 400px;
   cursor: pointer;
   text-decoration: none;
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-3xl);
+  
+  
 }
 
 .productImageStyle {
@@ -15,16 +17,17 @@
   align-items: center;
   justify-content: center;
   font-weight: var(--semibold);
+  
 }
 
 .productVendorStyle {
-  font-size: var(--text-sm);
+  font-size: var(--text-xl);
   color: var(--text-color-secondary);
 }
 
 .productHeadingStyle {
   width: 100%;
-  font-size: var(--text-lg);
+  font-size: var(--text-3xl);
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -34,3 +37,10 @@
 .productPrice {
   color: var(--text-color-secondary);
 }
+
+.producyIntroStyle {
+  color:red;
+}
+
+
+
