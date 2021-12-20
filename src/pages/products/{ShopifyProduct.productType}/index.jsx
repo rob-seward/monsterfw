@@ -5,21 +5,14 @@ import { ProductListing } from "../../../components/product-listing"
 import { Seo } from "../../../components/seo"
 import slugify from "@sindresorhus/slugify"
 import { MoreButton } from "../../../components/more-button"
-import { title } from "../index.module.css"
-import HeroBanner from "../../../components/hero-banner"
 import HomePageHero from "../../../components/home-page-hero"
 
 import {
   container,
-  intro,
   callOut,
   callToAction,
-  nye,
 } from "../../index.module.css"
 
-
-
-import homePageHero from "../../../components/home-page-hero"
 
 function Hero (props) {
   return (

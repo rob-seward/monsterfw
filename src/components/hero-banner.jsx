@@ -1,5 +1,5 @@
 import * as React from "react"
-import { placeholder, StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 export default function HeroBanner() {
     return <StaticImage 

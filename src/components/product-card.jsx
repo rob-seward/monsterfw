@@ -3,11 +3,9 @@ import { graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { getShopifyImage } from "gatsby-source-shopify"
 import { formatPrice } from "../utils/format-price"
-import { StoreContext } from "../context/store-context"
-import {AddToCart} from "../components/add-to-cart"
 import Video from "../components/video"
 import JSONData from "../content/fireworksVideos.json"
-import { moreButton } from "./more-button.module.css"
+
 
 import {
   productCardStyle,
@@ -16,24 +14,14 @@ import {
   productDetailsStyle,
   productVendorStyle,
   productPrice,
-  productIntroStyle,
+  
+  
 } from "./product-card.module.css"
-
-
-
-
 
 export function ProductCard({ product, eager }) {
 
-  const { client } = React.useContext(StoreContext);
-
-  
-  
   const {
-    id,
     title,
-    description,
-    tags,
     priceRangeV2,
     slug,
     images: [firstImage],
@@ -42,13 +30,7 @@ export function ProductCard({ product, eager }) {
   } = product
 
 
-
-
 const correctVideo = JSONData.content.find(data => data.id === product.id);
-console.log(correctVideo);
-
-
-
 
   const price = formatPrice(
     priceRangeV2.minVariantPrice.currencyCode,
@@ -82,16 +64,11 @@ console.log(correctVideo);
       aria-label={`View ${title} product page`}
     >
       <div className={productDetailsStyle}>
-        
         <h2 as="h2" className={productHeadingStyle}>
           {title}
         </h2>
         <div className={productVendorStyle}>{vendor}</div>
-        
-        
         <div className={productPrice}>{price}</div>
-        
-        
           <div>
             </div>
       </div>
@@ -111,16 +88,7 @@ console.log(correctVideo);
       }
       <div className={productDetailsStyle}>
       <div className={productVendorStyle}>{correctVideo?.intro}</div>
-        
-        
         <Video videoSrcURL={correctVideo?.videoSrcURL}/>
-        
-        <Link  className={moreButton} to="/products/jumping-jelly-beans/">more...</Link>
-
-        
-      
-        
-        
           <div>
             </div>
       </div>

@@ -16,8 +16,6 @@ import {
   deployButton,
 } from "./index.module.css"
 
-
-
   export default function IndexPage({ 
   
    }) {
@@ -25,10 +23,6 @@ import {
   return (
     <Layout>
      
-      
-      
-      
-      
     </Layout>
   )
 }

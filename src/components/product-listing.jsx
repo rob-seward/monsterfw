@@ -1,12 +1,13 @@
 import * as React from "react"
 import { ProductCard } from "./product-card"
-import { listingContainerStyle, animate } from "./product-listing.module.css"
+import { listingContainerStyle } from "./product-listing.module.css"
 
 // To optimize LCP we mark the first product card as eager so the image gets loaded faster
 export function ProductListing({ products = [] }) {
 
 let accessories=[];
-  products.map((product) => {
+  products.forEach((product) => {
+    
     if (product.tags[0] === 'accessories') {
       accessories.push(product);
       
@@ -14,35 +15,35 @@ let accessories=[];
 });
   
 let cakes=[];
-    products.map((product) => {
+    products.forEach((product) => {
       if (product.tags[0] === 'Cakes') {
         cakes.push(product);
       }
 });
 
 let fountains=[];
-    products.map((product) => {
+    products.forEach((product) => {
       if (product.tags[0] === 'Fountain') {
         fountains.push(product);
       }
 });
 
 let rockets=[];
-    products.map((product) => {
+    products.forEach((product) => {
       if (product.tags[0] === 'Rockets') {
         rockets.push(product);
       }
 });
 
 let SingleIgnition=[];
-    products.map((product) => {
+    products.forEach((product) => {
       if (product.tags[0] === 'Single Ignition') {
         SingleIgnition.push(product);
       }
 });
 
 let SelectionBoxes=[];
-    products.map((product) => {
+    products.forEach((product) => {
       if (product.tags[0] === 'Selection Boxes') {
         SelectionBoxes.push(product);
       }
@@ -59,6 +60,7 @@ let SelectionBoxes=[];
 
       <div className={listingContainerStyle}>
         {fountains.map((p, index) => (
+          
           <ProductCard product={p} key={p.id} eager={index === 0} />
           ))}
       </div>
