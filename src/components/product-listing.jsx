@@ -54,8 +54,8 @@ let SelectionBoxes=[];
     <>
     
     <h2 
-    data-sal="flip-up"
-    data-sal-delay="400"
+    data-sal="slide-up"
+    data-sal-delay="300"
     >Fountains</h2>
 
       <div className={listingContainerStyle}>
@@ -66,8 +66,8 @@ let SelectionBoxes=[];
       </div>
 
     <h2
-    data-sal="flip-up"
-    data-sal-delay="200"
+   data-sal="slide-up"
+   data-sal-delay="300"
     >Cakes</h2>
 
       <div className={listingContainerStyle} >
@@ -77,8 +77,8 @@ let SelectionBoxes=[];
       </div>
 
     <h2
-    data-sal="flip-up"
-    data-sal-delay="300"
+   data-sal="slide-up"
+   data-sal-delay="300"
     
     >Rockets</h2>
 
@@ -89,8 +89,8 @@ let SelectionBoxes=[];
       </div>
 
     <h2
-    data-sal="flip-up"
-    data-sal-delay="300"
+   data-sal="slide-up"
+   data-sal-delay="300"
     
     >Single Ignition</h2>
       <div className={listingContainerStyle}>
@@ -100,7 +100,7 @@ let SelectionBoxes=[];
       </div>
 
     <h2
-    data-sal="flip-up"
+    data-sal="slide-up"
     data-sal-delay="300"
     
     >Selection Boxes</h2>
@@ -112,7 +112,7 @@ let SelectionBoxes=[];
       </div>
 
     <h2
-    data-sal="flip-up"
+    data-sal="slide-up"
     data-sal-delay="300"
     
     >Accessories</h2>
