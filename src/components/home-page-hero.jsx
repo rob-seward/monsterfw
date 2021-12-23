@@ -6,7 +6,7 @@ import {
     bristolFavShop,
   } from "../components/home-page-hero.module.css"
 
-export default function homePageHero() {
+export default function HomePageHero() {
     return (
     <>
     <div>
